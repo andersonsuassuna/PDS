@@ -1,0 +1,731 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #087c68;
+    --green-dark: #056b5b;
+    --green-light: #d7eee8;
+
+    --background: #faf9f5;
+    --sidebar: #f0f8f4;
+
+    --text: #10201d;
+    --text-light: #647773;
+
+    --border: #d8dfdc;
+
+    --card: #ffffff;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* =========================
+   ESTRUTURA
+========================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+
+    background: var(--sidebar);
+
+    border-right: 1px solid #d5dfdb;
+
+    padding: 18px 8px;
+
+    flex-shrink: 0;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 8px 25px;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.logo-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--green);
+    color: white;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+}
+
+
+/* SEÇÕES */
+
+.menu-section {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    color: #72827e;
+
+    font-size: 12px;
+
+    margin: 0 6px 8px;
+}
+
+
+/* ITENS */
+
+.menu-item {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    height: 38px;
+
+    padding: 0 9px;
+
+    border-radius: 10px;
+
+    color: #23403b;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.menu-item:hover {
+    background: #e1f1ec;
+}
+
+.menu-item.active {
+    background: #d2eee7;
+}
+
+.icon {
+    width: 20px;
+
+    display: inline-flex;
+    justify-content: center;
+
+    font-size: 17px;
+
+    color: #173f38;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+    height: 58px;
+
+    border-bottom: 1px solid #deded9;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 30px;
+}
+
+.topbar-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 14px;
+}
+
+.topbar-logo span {
+    font-size: 18px;
+}
+
+
+/* =========================
+   CONTEÚDO
+========================= */
+
+.content {
+    padding: 32px;
+    max-width: 1600px;
+}
+
+
+/* =========================
+   BOAS-VINDAS
+========================= */
+
+.welcome {
+    margin-bottom: 36px;
+}
+
+.welcome-small {
+    color: #50635f;
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.welcome h1 {
+    font-size: 34px;
+
+    line-height: 1.2;
+
+    margin-bottom: 9px;
+
+    letter-spacing: -1px;
+}
+
+.welcome-text {
+    max-width: 570px;
+
+    color: #607570;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 375px;
+
+    gap: 24px;
+}
+
+
+/* =========================
+   AULAS
+========================= */
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+}
+
+.lesson-count {
+    background: #dff1ed;
+
+    color: #0a7968;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+}
+
+
+/* GRID DOS CARDS */
+
+.lesson-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* CARD */
+
+.lesson-card {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    min-height: 165px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+/* MATÉRIA */
+
+.subject {
+    display: inline-block;
+
+    border: 1px solid #d8e3df;
+
+    border-radius: 20px;
+
+    padding: 3px 10px;
+
+    font-size: 12px;
+
+    margin-bottom: 13px;
+}
+
+
+/* TÍTULO */
+
+.lesson-card h3 {
+    font-size: 16px;
+
+    font-weight: 500;
+
+    margin-bottom: 4px;
+}
+
+.teacher {
+    color: #71817d;
+
+    font-size: 13px;
+}
+
+
+/* BOTÃO */
+
+.watch {
+    border: 0;
+
+    background: transparent;
+
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    cursor: pointer;
+
+    color: #162f2a;
+
+    font-size: 13px;
+}
+
+.watch span {
+    width: 15px;
+    height: 15px;
+
+    border: 1.5px solid #173c35;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 8px;
+}
+
+
+/* =========================
+   COLUNA DIREITA
+========================= */
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+
+/* =========================
+   PERFIL
+========================= */
+
+.profile-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.profile-top {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 17px;
+}
+
+.avatar {
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: #087c68;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    border: 3px solid #e0eee9;
+}
+
+.profile-top h2 {
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+.profile-top p {
+    color: #71807d;
+
+    font-size: 13px;
+}
+
+
+/* PROGRESSO */
+
+.progress-info {
+    margin-bottom: 17px;
+}
+
+.progress {
+    height: 8px;
+
+    background: #d3e8e3;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-bottom: 7px;
+}
+
+.progress-value {
+    width: 88%;
+
+    height: 100%;
+
+    background: var(--green);
+}
+
+.progress-info span {
+    font-size: 11px;
+
+    color: #6f807b;
+}
+
+
+/* ESTATÍSTICAS */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.stat {
+    background: #f0f0e9;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 3px;
+}
+
+.stat span {
+    color: #77817e;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   CALENDÁRIO
+========================= */
+
+.calendar-card {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.calendar-title {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 16px;
+
+    margin-bottom: 14px;
+
+    color: #17342f;
+}
+
+.calendar-title span {
+    color: var(--green);
+}
+
+
+/* CALENDÁRIO */
+
+.calendar {
+    background: #faf9f5;
+
+    border-radius: 12px;
+
+    padding: 10px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4px 5px 14px;
+}
+
+.calendar-header strong {
+    font-size: 14px;
+}
+
+.calendar-header button {
+    border: none;
+
+    background: transparent;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    color: #263c38;
+}
+
+
+/* DIAS DA SEMANA */
+
+.weekdays,
+.days {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    text-align: center;
+}
+
+.weekdays span {
+    color: #75827f;
+
+    font-size: 11px;
+
+    padding-bottom: 8px;
+}
+
+
+/* DIAS */
+
+.days span {
+    width: 31px;
+    height: 31px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+
+    border-radius: 9px;
+}
+
+.days .muted {
+    color: #aeb5b2;
+}
+
+.days .today {
+    background: var(--green);
+
+    color: white;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .right-column {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 70px;
+
+        padding: 15px 7px;
+    }
+
+    .logo {
+        justify-content: center;
+
+        padding: 0 0 25px;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .section-title {
+        display: none;
+    }
+
+    .menu-item {
+        justify-content: center;
+    }
+
+    .menu-item span:last-child {
+        display: none;
+    }
+
+    .content {
+        padding: 24px;
+    }
+
+    .lesson-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .right-column {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .content {
+        padding: 20px 15px;
+    }
+
+    .welcome h1 {
+        font-size: 28px;
+    }
+
+    .welcome-text {
+        font-size: 14px;
+    }
+
+    .dashboard {
+        gap: 20px;
+    }
+
+}
